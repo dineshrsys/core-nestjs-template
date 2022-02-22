@@ -26,7 +26,7 @@
       "@decorators/*": ["./src/decorators/*"],
       "@exceptions/*": ["./src/exceptions/*"],
       "@utils/*": ["./src/utils/*"],
-      "@modules/*": ["./src/modules/*"],
+      "@modules/*": ["./src/modules/*"]
     }
   }
 }

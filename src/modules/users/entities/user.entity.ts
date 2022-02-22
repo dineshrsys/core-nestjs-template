@@ -1,4 +1,6 @@
-import { Table, AutoIncrement, PrimaryKey, Unique, Column, ForeignKey, AllowNull, Default } from 'sequelize-typescript';
+import {
+  Table, AutoIncrement, PrimaryKey, Unique, Column, ForeignKey, AllowNull, Default,
+} from 'sequelize-typescript';
 
 import { Exclude } from 'class-transformer';
 import { BaseEntity } from '@modules/base.entity';
@@ -61,13 +63,6 @@ export class User extends BaseEntity {
   @Column
   isTermsPolicyAccepted!: boolean;
 
-  @Default(false)
-  @Column
-  isAppUser!: boolean;
-
   @Column
   loginMethod!: string;
-
-  @Column
-  currentActAs!: string;
 }
