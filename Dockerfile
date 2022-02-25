@@ -1,7 +1,7 @@
 # Docker Multistage construction
 
 ### DEV Environmental Science  ###
-FROM node:14.17.3 AS development
+FROM node:14.18.2 AS development
 
 #  Navigate to the container working directory
 WORKDIR /usr/src/app
@@ -18,7 +18,7 @@ RUN npm run build
 
 
 ### PROD Environmental Science  ###
-FROM node:14.17.3 as production
+FROM node:14.18.2 as production
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
