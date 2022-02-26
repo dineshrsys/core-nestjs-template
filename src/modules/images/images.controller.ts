@@ -1,43 +1,53 @@
-import {
-  Controller, Get, Post, Body, Patch, Param, Delete,
-} from '@nestjs/common';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiExcludeController, ApiInternalServerErrorResponse, ApiNotFoundResponse, ApiTags } from '@nestjs/swagger';
+import { Controller, Delete, Get, Param, Patch, Post, Query, UploadedFile, UseInterceptors } from '@nestjs/common';
 
+import { ApiFile } from '@decorators/api-file.decorator';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { ImagesService } from '@modules/images/images.service';
-import { CreateImageDto } from '@modules/images/dto/create-image.dto';
-import { UpdateImageDto } from '@modules/images/dto/update-image.dto';
+
 
 @Controller()
-@ApiBearerAuth()
-@ApiTags('Images')
+@ApiTags('Image')
+@ApiExcludeController()
+@ApiNotFoundResponse({ description: 'Not Found' })
+@ApiInternalServerErrorResponse({ description: 'Internal Server Error' })
 export class ImagesController {
-  constructor(private readonly imagesService: ImagesService) {}
+    constructor(private readonly imagesService: ImagesService) {
+        //TODO::
+    }
 
-  @Post()
-  create(@Body() createImageDto: CreateImageDto) {
-    return this.imagesService.create(createImageDto);
-  }
+    @Post()
+    @ApiFile('file')
+    @UseInterceptors(FileInterceptor('file', { dest: './uploads' }))
+    upload(
+        @UploadedFile() file: Express.Multer.File,
+        @Query('type') type: string,
+        @Query('isMultiple') isMultiple: boolean,
+    ) {
+        return {
+            file,
+            type,
+            isMultiple,
+        };
+    }
 
-  @Get()
-  findAll() {
-    return this.imagesService.findAll();
-  }
+    @Get(':imageId')
+    findOne(@Param('imageId') imageId: number) {
+        //TODO::
+    }
 
-  @Get(':imageId')
-  findOne(@Param('imageId') imageId: string) {
-    return this.imagesService.findOne(+imageId);
-  }
+    @Patch(':imageId')
+    @ApiFile('file')
+    @UseInterceptors(FileInterceptor('file'))
+    update(
+        @Param('imageId') imageId: number,
+        @UploadedFile() file: Express.Multer.File,
+    ) {
+        //TODO::
+    }
 
-  @Patch(':imageId')
-  update(
-    @Param('imageId') imageId: string,
-    @Body() updateImageDto: UpdateImageDto,
-  ) {
-    return this.imagesService.update(+imageId, updateImageDto);
-  }
-
-  @Delete(':imageId')
-  remove(@Param('imageId') imageId: string) {
-    return this.imagesService.remove(+imageId);
-  }
+    @Delete(':imageId')
+    remove(@Param('imageId') imageId: number) {
+        //TODO::
+    }
 }

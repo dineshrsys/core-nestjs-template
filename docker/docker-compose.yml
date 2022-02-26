@@ -1,0 +1,46 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: ..
+      target: development
+      dockerfile: ./docker/Dockerfile
+    restart: always
+    container_name: app
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+      - ${SERVER_DEBUG_PORT}:${SERVER_DEBUG_PORT}
+    command: npm run start:dev
+    env_file:
+      - ../.env
+    networks:
+      - web_network
+    depends_on:
+      - postgres
+      - redis
+  redis:
+    container_name: redis
+    image: redis:6
+    networks:
+      - web_network
+  postgres:
+    container_name: postgres
+    image: postgres:13
+    networks:
+      - web_network
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASS}
+    ports:
+      - ${DATABASE_PORT}:${DATABASE_PORT}
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+networks:
+  web_network:
+volumes:
+  pg_data:

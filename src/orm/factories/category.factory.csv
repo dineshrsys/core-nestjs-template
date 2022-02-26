@@ -1,0 +1,18 @@
+category_title,category_slug,category_description,icon_id,is_approved
+Education,education,education category,,1
+Family,family,family category,,1
+Business,business,business category,,1
+Memorial,memorial,memorial category,,1
+Emergency,emergency,emergency category,,1
+Non-profit,non-profit,non-profit category,,1
+Medical,medical,medical category,,1
+Environment,environment,environment category,,1
+Animals,animals,animals category,,1
+Community,community,community category,,1
+Competition,competition,competition category,,1
+Creative,creative,creative category,,1
+Travel,travel,travel category,,1
+Faith,faith,faith category,,1
+Sport,sport,sport category,,1
+Event,event,event category,,1
+Wishes,wishes,wishes category,,1

@@ -5,8 +5,8 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": false,
-    "target": "es2017",
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2017",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -16,17 +16,42 @@
     "skipLibCheck": true,
     "strictPropertyInitialization": true,
     "paths": {
-      "@shared/*": ["./src/shared/*"],
-      "@constants/*": ["./src/constants/*"],
-      "@filters/*": ["./src/filters/*"],
-      "@guards/*": ["./src/guards/*"],
-      "@interfaces/*": ["./src/interfaces/*"],
-      "@pipes/*": ["./src/pipes/*"],
-      "@interceptors/*": ["./src/interceptors/*"],
-      "@decorators/*": ["./src/decorators/*"],
-      "@exceptions/*": ["./src/exceptions/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@modules/*": ["./src/modules/*"]
+      "@common/*": [
+        "./src/common/*"
+      ],
+      "@libs/*": [
+        "./src/libs/*"
+      ],
+      "@modules/*": [
+        "./src/modules/*"
+      ],
+      "@constants/*": [
+        "./src/common/constants/*"
+      ],
+      "@filters/*": [
+        "./src/common/filters/*"
+      ],
+      "@guards/*": [
+        "./src/common/guards/*"
+      ],
+      "@pipes/*": [
+        "./src/common/pipes/*"
+      ],
+      "@interfaces/*": [
+        "./src/common/interfaces/*"
+      ],
+      "@interceptors/*": [
+        "./src/common/interceptors/*"
+      ],
+      "@decorators/*": [
+        "./src/common/decorators/*"
+      ],
+      "@exceptions/*": [
+        "./src/common/exceptions/*"
+      ],
+      "@utils/*": [
+        "./src/common/utils/*"
+      ]
     }
   }
 }

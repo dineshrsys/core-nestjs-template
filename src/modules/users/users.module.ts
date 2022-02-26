@@ -6,9 +6,10 @@ import { User } from '@modules/users/entities/user.entity';
 import UsersController from '@modules/users/users.controller';
 
 @Module({
-  imports: [SequelizeModule.forFeature([User])],
-  controllers: [UsersController],
-  providers: [UsersService],
-  exports: [UsersService],
+    imports: [SequelizeModule.forFeature([User])],
+    controllers: [UsersController],
+    providers: [UsersService],
+    exports: [UsersService],
 })
-export default class UsersModule {}
+export default class UsersModule {
+}

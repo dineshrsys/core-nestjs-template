@@ -1,34 +1,32 @@
-import {
-  Model, Column, CreatedAt, UpdatedAt, DeletedAt,
-} from 'sequelize-typescript';
+import { Column, CreatedAt, DeletedAt, Model, UpdatedAt } from 'sequelize-typescript';
 
 export const ExcludeAttributesFromEntity = ['dataValues', '_', 'uniqno', 'isNewRecord'];
 export const ExcludeAuditColumn = {
-  exclude: ['createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'updatedBy', 'createdByIp', 'updatedByIp'],
+    exclude: ['createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'updatedBy', 'createdByIp', 'updatedByIp'],
 };
 export const ExcludeWithoutCreatedTimeColumn = {
-  exclude: ['deletedAt', 'createdBy', 'updatedBy', 'createdByIp', 'updatedByIp'],
+    exclude: ['deletedAt', 'createdBy', 'updatedBy', 'createdByIp', 'updatedByIp'],
 };
 
 export class BaseEntity extends Model {
-  @CreatedAt
-  createdAt!: Date;
+    @CreatedAt
+    createdAt!: Date;
 
-  @UpdatedAt
-  updatedAt!: Date;
+    @UpdatedAt
+    updatedAt!: Date;
 
-  @DeletedAt
-  deletedAt!: Date;
+    @DeletedAt
+    deletedAt!: Date;
 
-  @Column({ allowNull: true })
-  createdBy!: bigint;
+    @Column({ allowNull: true })
+    createdBy!: bigint;
 
-  @Column({ allowNull: true })
-  updatedBy!: bigint;
+    @Column({ allowNull: true })
+    updatedBy!: bigint;
 
-  @Column({ allowNull: true })
-  createdByIp!: string;
+    @Column({ allowNull: true })
+    createdByIp!: string;
 
-  @Column({ allowNull: true })
-  updatedByIp!: string;
+    @Column({ allowNull: true })
+    updatedByIp!: string;
 }
