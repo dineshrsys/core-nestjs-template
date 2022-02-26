@@ -11,7 +11,7 @@ module.exports = {
             script: 'dist/main.js',
             exec_mode: 'cluster', // 'cluster' or 'fork'
             instance_var: 'APP_INSTANCE_ID', // instance variable
-            instances: 1, // pm2 instance count
+            instances: 2, // pm2 instance count
             autorestart: true, // auto restart if process crash
             watch: false, // files change automatic restart
             ignore_watch: ['node_modules', 'logs'], // ignore files change

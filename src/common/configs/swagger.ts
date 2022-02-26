@@ -9,7 +9,7 @@ export const setupSwagger = (app: INestApplication) => {
     const documents = SwaggerModule.createDocument(
         app,
         new DocumentBuilder()
-            .setTitle('Good Action')
+            .setTitle('Good Action | API Documentation')
             .setDescription('API Documentation')
             .setVersion('1.0.0')
             .addServer(<string>process.env.SWAGGER_HOST)

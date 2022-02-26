@@ -2,8 +2,8 @@
   "name": "core-nestjs-api",
   "version": "1.0.0",
   "description": "",
-  "author": "RadiansysInc",
-  "license": "RadiansysInc",
+  "author": "Dinesh kumar",
+  "license": "Dinesh kumar",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",

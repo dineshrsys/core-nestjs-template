@@ -1,7 +1,0 @@
-action_type_id,action_title,action_slug,action_description,action_icon_id,visible_to_entity,is_approved
-20000,I need a item,i-need-a-item,I need a item,,User,true
-20000,I need a fundraiser,i-need-a-fundraiser,I need a fundraiser,,User,true
-20000,I need a volunteer service,i-need-a-volunteer-service,I need a volunteer service,,User,true
-20001,Give an item,give-an-item,Give an item,,User,true
-20001,Volunteer for a service,volunteer-for-a-service,Volunteer for a service,,User,true
-20001,Donate to cause,donate-to-cause,Donate to cause,,User,true

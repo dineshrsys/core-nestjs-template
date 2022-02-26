@@ -1,11 +1,13 @@
-# Core Nestjs API
+# core-nestjs API
 
 ## Description
 
 ### Project Introduction
 
 - Support ES6/ES7 features
-- Using Eslint followed [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- NestJs
+- Sequelize
+- Postgres
 - Docker [ Not now ]
 - Prettier
 
@@ -60,9 +62,9 @@ To run your app in docker containers choose "Yes" when the generator asks you ab
 
 #### Now, lift your app in docker
 
-```
-  docker-compose up
-```
+``` 
+  docker-compose up 
+``` 
 
 ## Set up environment
 
